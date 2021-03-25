@@ -1,5 +1,5 @@
 import React from 'react';
-import userService from "../services/userService";
+import userService from "../services/UserService";
 
 class UserComponent extends React.Component {
 
@@ -21,12 +21,11 @@ class UserComponent extends React.Component {
             <div>
                 <h1 className="text-center">Users List</h1>
                 <table className="table table-striped">
-                    <thead>
-                        <td>UserId</td>
-                        <td>Username</td>
-                        <td>Email</td>
-                        <td>Password</td>
-                    </thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                        </tr>
                     <tbody>
                     {
                         this.state.users.map(
@@ -39,6 +38,7 @@ class UserComponent extends React.Component {
                         )
                     }
                     </tbody>
+
                 </table>
             </div>
         );
