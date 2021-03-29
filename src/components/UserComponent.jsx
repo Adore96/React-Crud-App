@@ -11,6 +11,7 @@ class UserComponent extends React.Component {
     }
 
     componentDidMount() {
+        //then refers with a JS Promise
         userService.getUsers().then((response) => {
             this.setState({users: response.data})
         });
@@ -21,11 +22,15 @@ class UserComponent extends React.Component {
             <div>
                 <h1 className="text-center">Users List</h1>
                 <table className="table table-striped">
-                        <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                        </tr>
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+
                     <tbody>
                     {
                         this.state.users.map(
@@ -33,7 +38,7 @@ class UserComponent extends React.Component {
                                 <tr key={user.id}>
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.password}</td>
+
                                 </tr>
                         )
                     }
