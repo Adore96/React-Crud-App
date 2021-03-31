@@ -8,6 +8,15 @@ class UserComponent extends React.Component {
         this.state = {
             users: []
         }
+        this.updateUser = this.updateUser.bind(this);
+    }
+
+    updateUser(id) {
+        this.props.history.push(`/update-user/${id}`);
+    }
+
+    deleteUser(id) {
+        this.props.history.push('/delete-user');
     }
 
     componentDidMount() {
@@ -26,7 +35,7 @@ class UserComponent extends React.Component {
                     <tr>
                         <th>Username</th>
                         <th>Email</th>
-
+                        <th>Telephone</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -38,12 +47,15 @@ class UserComponent extends React.Component {
                                 <tr key={user.id}>
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
-
+                                    <td>{user.telephone}</td>
+                                    <td>
+                                        <button onClick={()=>this.updateUser(user.id)} className="btn btn-outline-info">Update</button>
+                                        <button onClick={()=>this.deleteUser(user.id)} className="btn btn-outline-danger">Delete</button>
+                                    </td>
                                 </tr>
                         )
                     }
                     </tbody>
-
                 </table>
             </div>
         );

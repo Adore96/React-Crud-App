@@ -26,7 +26,7 @@ class HeaderComponent extends Component {
                         <a className="nav-link" href="#">Link 2</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link 3</a>
+                        <a className="nav-link" href="#">Logout</a>
                     </li>
                 </ul>
             </nav>
