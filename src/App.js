@@ -19,6 +19,7 @@ function App() {
                         <Route path="/users" component={UserComponent}/>
                         <Route path="/add-user" component={AddUserComponent}/>
                         <Route path="/update-user/:id" component={UpdateUserComponent}/>
+                        <Route path="/delete-user/:id" component={UserComponent}/>
                     </Switch>
                 </div>
 

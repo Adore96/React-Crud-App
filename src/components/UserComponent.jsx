@@ -1,5 +1,6 @@
 import React from 'react';
 import userService from "../services/UserService";
+import UserService from "../services/UserService";
 
 class UserComponent extends React.Component {
 
@@ -9,6 +10,7 @@ class UserComponent extends React.Component {
             users: []
         }
         this.updateUser = this.updateUser.bind(this);
+        this.deleteUser = this.deleteUser.bind(this);
     }
 
     updateUser(id) {
@@ -16,7 +18,9 @@ class UserComponent extends React.Component {
     }
 
     deleteUser(id) {
-        this.props.history.push('/delete-user');
+        UserService.deleteUser(id).then(res => {
+            this.setState({users: this.state.users.filter(user => user.id !== id)});
+        })
     }
 
     componentDidMount() {
@@ -49,8 +53,12 @@ class UserComponent extends React.Component {
                                     <td>{user.email}</td>
                                     <td>{user.telephone}</td>
                                     <td>
-                                        <button onClick={()=>this.updateUser(user.id)} className="btn btn-outline-info">Update</button>
-                                        <button onClick={()=>this.deleteUser(user.id)} className="btn btn-outline-danger">Delete</button>
+                                        <button onClick={() => this.updateUser(user.id)}
+                                                className="btn btn-outline-info">Update
+                                        </button>
+                                        <button style={{marginLeft: "10px"}} onClick={() => this.deleteUser(user.id)}
+                                                className="btn btn-outline-danger">Delete
+                                        </button>
                                     </td>
                                 </tr>
                         )
