@@ -11,6 +11,7 @@ class UserComponent extends React.Component {
         }
         this.updateUser = this.updateUser.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
+        this.viewUser = this.viewUser.bind(this);
     }
 
     updateUser(id) {
@@ -21,6 +22,10 @@ class UserComponent extends React.Component {
         UserService.deleteUser(id).then(res => {
             this.setState({users: this.state.users.filter(user => user.id !== id)});
         })
+    }
+
+    viewUser(id) {
+        this.props.history.push(`/view-user/${id}`);
     }
 
     componentDidMount() {
@@ -35,6 +40,7 @@ class UserComponent extends React.Component {
             <div>
                 <h1 className="text-center">Users List</h1>
                 <table className="table table-striped">
+
                     <thead>
                     <tr>
                         <th>Username</th>
@@ -58,6 +64,9 @@ class UserComponent extends React.Component {
                                         </button>
                                         <button style={{marginLeft: "10px"}} onClick={() => this.deleteUser(user.id)}
                                                 className="btn btn-outline-danger">Delete
+                                        </button>
+                                        <button style={{marginLeft: "10px"}} onClick={() => this.viewUser(user.id)}
+                                                className="btn btn-outline-success">View Details
                                         </button>
                                     </td>
                                 </tr>
