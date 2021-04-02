@@ -13,7 +13,7 @@ class FooterComponent extends Component {
             <div>
                 <footer className="footer">
 
-                    <div className="text-center p-3 bg-dark text-white">
+                    <div className="text-center p-3 bg-dark text-white" style={{position: "fixed" , bottom:"0" , width:"100%"}}>
                         © 2020 Copyright :
                         <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
                     </div>

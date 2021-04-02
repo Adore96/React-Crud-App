@@ -9,12 +9,12 @@ import ViewUserComponent from "./components/ViewUserComponent";
 import LoginComponent from "./components/LoginComponent";
 
 
+
 function App() {
     return (
         <div>
             <Router>
                 <HeaderComponent/>
-
                 <div className="Container">
                     <Switch>
                         <Route path="/" exact component={UserComponent}/>
