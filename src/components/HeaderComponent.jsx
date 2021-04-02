@@ -8,10 +8,15 @@ class HeaderComponent extends Component {
         super(props);
         this.state = {}
         this.addUser = this.addUser.bind(this);
+        this.login = this.login.bind(this);
     }
 
     addUser() {
         this.props.history.push('/add-user');
+    }
+
+    login() {
+        this.props.history.push('/login');
     }
 
     render() {
@@ -23,10 +28,10 @@ class HeaderComponent extends Component {
                         <a className="nav-link" onClick={this.addUser}>Add User</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link 2</a>
+                        <a className="nav-link" >Link 2</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Logout</a>
+                        <a className="nav-link" onClick={this.login}>Logout</a>
                     </li>
                 </ul>
             </nav>

@@ -7,17 +7,16 @@ class ViewUserComponent extends Component {
         super(props);
 
         this.state = {
-            id:this.props.match.params.id,
-            user:{}
+            id: this.props.match.params.id,
+            user: {}
         }
     }
 
     componentDidMount() {
         UserService.getUser(this.state.id).then(response => {
-            this.setState({user:response.data });
+            this.setState({user: response.data});
         })
     }
-
 
     cancel() {
         this.props.history.push('/users');
@@ -35,7 +34,8 @@ class ViewUserComponent extends Component {
                                     <label>User Name </label>
                                     <input type="text" placeholder="User Name" name="userName"
                                            className="form-control"
-                                           value={this.state.user.username} onChange={this.changeUsernamehandler} readOnly={true}/>
+                                           value={this.state.user.username} onChange={this.changeUsernamehandler}
+                                           readOnly={true}/>
                                 </div>
                                 <div className="form-group">
                                     <label>Email </label>

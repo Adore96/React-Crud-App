@@ -8,13 +8,12 @@ class FooterComponent extends Component {
         this.state = {}
     }
 
-
     render() {
         return (
             <div>
                 <footer className="footer">
 
-                    <div className="text-center p-3 bg-dark text-white" >
+                    <div className="text-center p-3 bg-dark text-white">
                         © 2020 Copyright :
                         <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
                     </div>

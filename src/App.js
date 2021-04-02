@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import AddUserComponent from "./components/AddUserComponent";
 import UpdateUserComponent from "./components/UpdateUserComponent";
 import ViewUserComponent from "./components/ViewUserComponent";
+import LoginComponent from "./components/LoginComponent";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/update-user/:id" component={UpdateUserComponent}/>
                         <Route path="/delete-user/:id" component={UserComponent}/>
                         <Route path="/view-user/:id" component={ViewUserComponent}/>
+                        <Route path="/login" component={LoginComponent}/>
                     </Switch>
                 </div>
 
