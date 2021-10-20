@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import App from "./App";
 
 ReactDom.render(
+    // initializing the root component
     <React.StrictMode>
         <App/>
     </React.StrictMode>
